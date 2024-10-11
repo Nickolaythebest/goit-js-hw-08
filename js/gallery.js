@@ -86,7 +86,7 @@ function createMarkup(arr){
 }
 function handleClick(event){
   event.preventDefault();
-  if(event.target === event.currentTarget){
+  if(event.target.nodeName !== "IMG"){
     return;
   }
   const clickedImage = event.target;
@@ -95,7 +95,7 @@ function handleClick(event){
   const imageDescription = clickedImage.alt;
   const instance = basicLightbox.create(`
     <div class="modal">
-    <img src="${imageSource}" alt="${imageDescription}" width="600">
+    <img src="${imageSource}" alt="${imageDescription}" width="1112" height="640">
     </div>
     `)
     instance.show();
